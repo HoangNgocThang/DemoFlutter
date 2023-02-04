@@ -1,6 +1,7 @@
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/sceens/home-screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -12,7 +13,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
+    return Scaffold(
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
@@ -39,6 +40,13 @@ class _LoginScreenState extends State<LoginScreen> {
             const Text(
               'test',
             ),
+            TextButton(
+                onPressed: () => {Navigator.pushNamed(context, '/home')},
+                child: const Text("Go To Home")),
+            TextButton(
+                onPressed: () =>
+                    {Navigator.pushReplacementNamed(context, '/home')},
+                child: const Text("Replace Home"))
           ],
         ),
       ),
