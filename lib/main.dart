@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/sceens/home-screen.dart';
 import 'package:my_app/sceens/login-screen.dart';
+import 'package:my_app/sceens/test-provider-screen.dart';
 import 'package:my_app/sceens/test-screen.dart';
+// import 'package:device_preview/device_preview.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -18,16 +18,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: const HomeScreen(),
-      // home: LoginScreen(),
-      // home: TestScreen(),
       routes: {
         '/login': (context) => LoginScreen(),
         '/home': (context) => HomeScreen(),
-        '/test': (context) => TestScreen()
+        '/test': (context) => TestScreen(),
+        '/test-provider': (context) => TestProviderScreen()
       },
-      initialRoute: '/login',
+      initialRoute: '/test-provider',
       debugShowCheckedModeBanner: false,
+      //  darkTheme: ThemeData.dark(),
+      // useInheritedMediaQuery: true,
+      // locale: DevicePreview.locale(context),
+      // builder: DevicePreview.appBuilder,
     );
   }
 }
