@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         '/test': (context) => TestScreen(),
         '/test-provider': (context) => TestProviderScreen()
       },
-      initialRoute: '/test-provider',
+      initialRoute: '/home',
       debugShowCheckedModeBanner: false,
       //  darkTheme: ThemeData.dark(),
       // useInheritedMediaQuery: true,
