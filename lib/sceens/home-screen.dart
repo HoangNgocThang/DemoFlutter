@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:my_app/model/task.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,6 +13,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final String nameTodo = "";
   bool show = false;
+  final List<Task> list = [];
+  String nameTask = "";
+  final myController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +33,37 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: ListView(
-                    children: [
-                      Text("List To Do:"),
-                    ],
-                  ),
+                      children: list
+                          .map((e) => Container(
+                                padding: const EdgeInsets.all(10),
+                                margin: const EdgeInsets.only(bottom: 10),
+                                color: Colors.amber,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Column(
+                                      // mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text("${e.id}"),
+                                        const SizedBox(
+                                          width: 10,
+                                          height: 10,
+                                        ),
+                                        Text(e.task,
+                                            style: const TextStyle(
+                                                fontWeight: FontWeight.w900,
+                                                color: Colors.pink,
+                                                fontSize: 16))
+                                      ],
+                                    ),
+                                    const Icon(Icons.delete)
+                                  ],
+                                ),
+                              ))
+                          .toList()),
                 )),
           ],
         ),
@@ -56,15 +87,16 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Container(
           // color: Colors.blue,
           padding: const EdgeInsets.all(15),
-          height: 40,
+          height: 80,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Flexible(
+              Flexible(
                 fit: FlexFit.tight,
                 child: SizedBox(
                   height: 40,
                   child: TextField(
+                    controller: myController,
                     // textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 12,
@@ -86,7 +118,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.green,
                         foregroundColor: Colors.white),
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        list.add(Task(
+                            id: DateTime.now().toString(),
+                            task: myController.text));
+                        myController.text = '';
+                      });
+                    },
                     child: const Text('Add'),
                   ))
             ],
