@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:my_app/model/task.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -59,7 +57,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 fontSize: 16))
                                       ],
                                     ),
-                                    const Icon(Icons.delete)
+                                    InkWell(
+                                        onTap: () {
+                                          _showMyDialog(e);
+                                        },
+                                        child: const Icon(Icons.delete))
                                   ],
                                 ),
                               ))
@@ -81,6 +83,44 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  Future<void> _showMyDialog(item) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('AlertDialog Title'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: const <Widget>[
+                Text('Would you like remove task?'),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('OK'),
+              onPressed: () {
+                // Navigator.pop(context, 'Cancel');
+                Navigator.pop(context);
+                setState(() {
+                  list.remove(item);
+                });
+              },
+            ),
+            TextButton(
+              child: const Text('CANCEL'),
+              onPressed: () {
+                // Navigator.pop(context, 'Cancel');
+                 Navigator.pop(context);
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   Visibility buildFormAdd() {
     return Visibility(
       visible: show,
@@ -98,11 +138,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: TextField(
                     controller: myController,
                     // textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 12,
                         color: Colors.black,
                         textBaseline: TextBaseline.ideographic),
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         // labelText: 'Add new To Do',
                         hintText: 'Add new To Do',
