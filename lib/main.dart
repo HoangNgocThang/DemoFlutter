@@ -45,6 +45,7 @@ class MyApp extends StatelessWidget {
             '/test-redux': (context) => TestReduxScreen()
           },
           initialRoute: '/test-redux',
+          // initialRoute: '/home',
           debugShowCheckedModeBanner: false,
           //  darkTheme: ThemeData.dark(),
           // useInheritedMediaQuery: true,
