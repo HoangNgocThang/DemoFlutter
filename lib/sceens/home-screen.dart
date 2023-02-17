@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 flex: 1,
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: ListView(
+                  child:list.isNotEmpty? ListView(
                       children: list
                           .map((e) => Container(
                                 padding: const EdgeInsets.all(10),
@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ],
                                 ),
                               ))
-                          .toList()),
+                          .toList()): Text('Data is Emty'),
                 )),
           ],
         ),
