@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:my_app/provider/config_server_provider.dart';
 import 'package:my_app/sceens/home-screen.dart';
 import 'package:my_app/sceens/login-screen.dart';
 import 'package:my_app/sceens/test-provider-screen.dart';
 import 'package:my_app/sceens/test-redux-screen.dart';
 import 'package:my_app/sceens/test-screen.dart';
 import 'package:redux/redux.dart';
+import 'package:provider/provider.dart';
+import 'provider/movie_provider.dart';
 // import 'package:device_preview/device_preview.dart';
 
 // The reducer, which takes the previous count and increments it in response
@@ -22,7 +25,21 @@ int counterReducer(int state, dynamic action) {
 
 final store = Store<int>(counterReducer, initialState: 0);
 
-void main() => runApp(MyApp());
+// void main() => runApp(MyApp());
+
+void main() {
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(
+        create: (ctx) => MovieProvider(),
+      ),
+      ChangeNotifierProvider(
+        create: (ctx) => ConfigServerProvider(),
+      ),
+    ],
+    child: const MyApp(),
+  ));
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -45,7 +62,8 @@ class MyApp extends StatelessWidget {
             '/test-redux': (context) => TestReduxScreen()
           },
           // initialRoute: '/test-redux',
-          initialRoute: '/home',
+          // initialRoute: '/home',
+          initialRoute: '/test-provider',
           debugShowCheckedModeBanner: false,
           //  darkTheme: ThemeData.dark(),
           // useInheritedMediaQuery: true,
