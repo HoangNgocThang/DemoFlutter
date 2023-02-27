@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 
 import '../provider/movie_provider.dart';
 
-
 class MyListScreen extends StatefulWidget {
   const MyListScreen({Key? key}) : super(key: key);
 
@@ -20,8 +19,10 @@ class _MyListScreenState extends State<MyListScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("My List (${myList.length}) Version: ${dataConfigServer.version} TimeLogout: ${dataConfigServer.timeLogout}"),
-        titleTextStyle: TextStyle(fontSize: 12, color: Colors.red, fontWeight: FontWeight.w600),
+        title: Text(
+            "My List (${myList.length}) Version: ${dataConfigServer.version} TimeLogout: ${dataConfigServer.timeLogout}"),
+        titleTextStyle: const TextStyle(
+            fontSize: 12, color: Colors.red, fontWeight: FontWeight.w600),
       ),
       body: ListView.builder(
           itemCount: myList.length,
