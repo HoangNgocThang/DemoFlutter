@@ -6,6 +6,7 @@ import 'package:my_app/sceens/login-screen.dart';
 import 'package:my_app/sceens/test-provider-screen.dart';
 import 'package:my_app/sceens/test-redux-screen.dart';
 import 'package:my_app/sceens/test-screen.dart';
+import 'package:my_app/sceens/test_call_api_screen.dart';
 import 'package:redux/redux.dart';
 import 'package:provider/provider.dart';
 import 'provider/movie_provider.dart';
@@ -59,11 +60,13 @@ class MyApp extends StatelessWidget {
             '/home': (context) => HomeScreen(),
             '/test': (context) => TestScreen(),
             '/test-provider': (context) => TestProviderScreen(),
-            '/test-redux': (context) => TestReduxScreen()
+            '/test-redux': (context) => TestReduxScreen(),
+            '/test-call-api': (context) => TestCallApiScreen()
           },
           // initialRoute: '/test-redux',
           // initialRoute: '/home',
-          initialRoute: '/test-provider',
+          // initialRoute: '/test-provider',
+          initialRoute: '/test-call-api',
           debugShowCheckedModeBanner: false,
           //  darkTheme: ThemeData.dark(),
           // useInheritedMediaQuery: true,
