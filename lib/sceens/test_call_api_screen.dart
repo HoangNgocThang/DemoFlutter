@@ -68,12 +68,16 @@ class _TestCallApiScreenState extends State<TestCallApiScreen> {
             future: futureAlbum,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                return Text(snapshot.data!.title);
+                return Center(child: Text(snapshot.data!.title));
               } else if (snapshot.hasError) {
-                return Text('${snapshot.error}');
+                return Center(
+                  child: Text('${snapshot.error}'),
+                );
               }
               // By default, show a loading spinner.
-              return const CircularProgressIndicator();
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
             },
           ),
           FutureBuilder<AlbumPost>(
@@ -81,16 +85,22 @@ class _TestCallApiScreenState extends State<TestCallApiScreen> {
             builder: (context, snapshot) {
               print(snapshot);
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return const CircularProgressIndicator();
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
               }
               if (snapshot.connectionState == ConnectionState.done) {
                 if (snapshot.hasData) {
-                  return Text(snapshot.data!.title);
+                  return Center(
+                    child: Text(snapshot.data!.title),
+                  );
                 } else if (snapshot.hasError) {
-                  return Text('${snapshot.error}');
+                  return Center(child: Text('${snapshot.error}'));
                 }
               }
-              return Text("_ _ _");
+              return Center(
+                child: Text("_ _ _"),
+              );
             },
           ),
           TextButton(
