@@ -7,6 +7,7 @@ import 'package:my_app/sceens/test-provider-screen.dart';
 import 'package:my_app/sceens/test-redux-screen.dart';
 import 'package:my_app/sceens/test-screen.dart';
 import 'package:my_app/sceens/test_call_api_screen.dart';
+import 'package:my_app/sceens/test_serializing_json_screen.dart';
 import 'package:redux/redux.dart';
 import 'package:provider/provider.dart';
 import 'provider/movie_provider.dart';
@@ -61,12 +62,14 @@ class MyApp extends StatelessWidget {
             '/test': (context) => TestScreen(),
             '/test-provider': (context) => TestProviderScreen(),
             '/test-redux': (context) => TestReduxScreen(),
-            '/test-call-api': (context) => TestCallApiScreen()
+            '/test-call-api': (context) => TestCallApiScreen(),
+            '/test-json':(context) => TestSerialozationJsonScreen()
           },
           // initialRoute: '/test-redux',
           // initialRoute: '/home',
           // initialRoute: '/test-provider',
-          initialRoute: '/test-call-api',
+          // initialRoute: '/test-call-api',
+          initialRoute: '/test-json',
           debugShowCheckedModeBanner: false,
           //  darkTheme: ThemeData.dark(),
           // useInheritedMediaQuery: true,
