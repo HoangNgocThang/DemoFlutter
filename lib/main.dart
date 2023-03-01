@@ -3,6 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:my_app/provider/config_server_provider.dart';
 import 'package:my_app/sceens/home-screen.dart';
 import 'package:my_app/sceens/login-screen.dart';
+import 'package:my_app/sceens/test-form-screen.dart';
 import 'package:my_app/sceens/test-provider-screen.dart';
 import 'package:my_app/sceens/test-redux-screen.dart';
 import 'package:my_app/sceens/test-screen.dart';
@@ -63,13 +64,14 @@ class MyApp extends StatelessWidget {
             '/test-provider': (context) => TestProviderScreen(),
             '/test-redux': (context) => TestReduxScreen(),
             '/test-call-api': (context) => TestCallApiScreen(),
-            '/test-json':(context) => TestSerialozationJsonScreen()
+            '/test-json':(context) => TestSerialozationJsonScreen(),
+            '/test-form': (context) => TestFormScreen()
           },
           // initialRoute: '/test-redux',
           // initialRoute: '/home',
           // initialRoute: '/test-provider',
           // initialRoute: '/test-call-api',
-          initialRoute: '/test-json',
+          initialRoute: '/test-form',
           debugShowCheckedModeBanner: false,
           //  darkTheme: ThemeData.dark(),
           // useInheritedMediaQuery: true,
