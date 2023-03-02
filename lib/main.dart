@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:my_app/provider/config_server_provider.dart';
-import 'package:my_app/sceens/home-screen.dart';
-import 'package:my_app/sceens/login-screen.dart';
-import 'package:my_app/sceens/test-form-screen.dart';
-import 'package:my_app/sceens/test-provider-screen.dart';
-import 'package:my_app/sceens/test-redux-screen.dart';
-import 'package:my_app/sceens/test-screen.dart';
-import 'package:my_app/sceens/test_call_api_screen.dart';
-import 'package:my_app/sceens/test_serializing_json_screen.dart';
+import 'package:my_app/screens/home-screen.dart';
+import 'package:my_app/screens/login-screen.dart';
+import 'package:my_app/screens/test-form-screen.dart';
+import 'package:my_app/screens/test-provider-screen.dart';
+import 'package:my_app/screens/test-redux-screen.dart';
+import 'package:my_app/screens/test-screen.dart';
+import 'package:my_app/screens/test_call_api_screen.dart';
+import 'package:my_app/screens/test_serializing_json_screen.dart';
 import 'package:redux/redux.dart';
 import 'package:provider/provider.dart';
 import 'provider/movie_provider.dart';
@@ -68,10 +68,10 @@ class MyApp extends StatelessWidget {
             '/test-form': (context) => TestFormScreen()
           },
           // initialRoute: '/test-redux',
-          // initialRoute: '/home',
+          initialRoute: '/home',
           // initialRoute: '/test-provider',
           // initialRoute: '/test-call-api',
-          initialRoute: '/test-form',
+          // initialRoute: '/test-form',
           debugShowCheckedModeBanner: false,
           //  darkTheme: ThemeData.dark(),
           // useInheritedMediaQuery: true,
