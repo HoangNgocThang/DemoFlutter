@@ -3,6 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:my_app/provider/config_server_provider.dart';
 import 'package:my_app/screens/home-screen.dart';
 import 'package:my_app/screens/login-screen.dart';
+import 'package:my_app/screens/nhuahvt_home_screen.dart';
 import 'package:my_app/screens/test-form-screen.dart';
 import 'package:my_app/screens/test-provider-screen.dart';
 import 'package:my_app/screens/test-redux-screen.dart';
@@ -65,10 +66,11 @@ class MyApp extends StatelessWidget {
             '/test-redux': (context) => TestReduxScreen(),
             '/test-call-api': (context) => TestCallApiScreen(),
             '/test-json':(context) => TestSerialozationJsonScreen(),
-            '/test-form': (context) => TestFormScreen()
+            '/test-form': (context) => TestFormScreen(),
+            '/nhuahvt-home': (context) => NhuahvtHomeScreen()
           },
           // initialRoute: '/test-redux',
-          initialRoute: '/home',
+          initialRoute: '/nhuahvt-home',
           // initialRoute: '/test-provider',
           // initialRoute: '/test-call-api',
           // initialRoute: '/test-form',
