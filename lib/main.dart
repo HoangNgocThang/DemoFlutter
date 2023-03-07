@@ -13,6 +13,8 @@ import 'package:my_app/screens/test_serializing_json_screen.dart';
 import 'package:redux/redux.dart';
 import 'package:provider/provider.dart';
 import 'provider/movie_provider.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 // import 'package:device_preview/device_preview.dart';
 
 // The reducer, which takes the previous count and increments it in response
@@ -31,7 +33,13 @@ final store = Store<int>(counterReducer, initialState: 0);
 
 // void main() => runApp(MyApp());
 
-void main() {
+void main() async {
+  // init Firebase --- start
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  // init Firebase --- end
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(
@@ -47,7 +55,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -65,7 +72,7 @@ class MyApp extends StatelessWidget {
             '/test-provider': (context) => TestProviderScreen(),
             '/test-redux': (context) => TestReduxScreen(),
             '/test-call-api': (context) => TestCallApiScreen(),
-            '/test-json':(context) => TestSerialozationJsonScreen(),
+            '/test-json': (context) => TestSerialozationJsonScreen(),
             '/test-form': (context) => TestFormScreen(),
             '/nhuahvt-home': (context) => NhuahvtHomeScreen()
           },
