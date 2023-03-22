@@ -4,6 +4,7 @@ import 'package:my_app/provider/config_server_provider.dart';
 import 'package:my_app/provider/data_provider.dart';
 import 'package:my_app/screens/home-screen.dart';
 import 'package:my_app/screens/login-screen.dart';
+import 'package:my_app/screens/nhuahvt_cart_screen.dart';
 import 'package:my_app/screens/nhuahvt_home_screen.dart';
 import 'package:my_app/screens/test-form-screen.dart';
 import 'package:my_app/screens/test-provider-screen.dart';
@@ -51,7 +52,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  // This widgets is the root of your application.
   @override
   Widget build(BuildContext context) {
     return StoreProvider(
@@ -71,13 +72,16 @@ class MyApp extends StatelessWidget {
             '/test-json': (context) => TestSerialozationJsonScreen(),
             '/test-form': (context) => TestFormScreen(),
             '/nhuahvt-home': (context) => NhuahvtHomeScreen(),
-            '/tes_provider_v2': (context) => TestProviderV2Screen()
+            '/nhuahvt-cart': (context) => NhuahvtCartScreen(),
+            '/test_provider_v2': (context) => TestProviderV2Screen()
           },
           // initialRoute: '/test-redux',
-          initialRoute: '/test-json',
-          // initialRoute: '/test-provider',
+          // initialRoute: '/test-json',
+          // initialRoute: '/test_provider_v2',
           // initialRoute: '/test-call-api',
           // initialRoute: '/test-form',
+          //  initialRoute: '/test-provider',
+          initialRoute: '/nhuahvt-home',
           debugShowCheckedModeBanner: false,
           //  darkTheme: ThemeData.dark(),
           // useInheritedMediaQuery: true,
