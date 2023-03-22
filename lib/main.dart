@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:my_app/provider/config_server_provider.dart';
+import 'package:my_app/provider/data_provider.dart';
 import 'package:my_app/screens/home-screen.dart';
 import 'package:my_app/screens/login-screen.dart';
 import 'package:my_app/screens/nhuahvt_home_screen.dart';
@@ -9,6 +10,7 @@ import 'package:my_app/screens/test-provider-screen.dart';
 import 'package:my_app/screens/test-redux-screen.dart';
 import 'package:my_app/screens/test-screen.dart';
 import 'package:my_app/screens/test_call_api_screen.dart';
+import 'package:my_app/screens/test_provider_v2_screen.dart';
 import 'package:my_app/screens/test_serializing_json_screen.dart';
 import 'package:redux/redux.dart';
 import 'package:provider/provider.dart';
@@ -40,6 +42,7 @@ void main() {
       ChangeNotifierProvider(
         create: (ctx) => ConfigServerProvider(),
       ),
+      ChangeNotifierProvider(create: (ctx) => DataProvider())
     ],
     child: const MyApp(),
   ));
@@ -65,12 +68,13 @@ class MyApp extends StatelessWidget {
             '/test-provider': (context) => TestProviderScreen(),
             '/test-redux': (context) => TestReduxScreen(),
             '/test-call-api': (context) => TestCallApiScreen(),
-            '/test-json':(context) => TestSerialozationJsonScreen(),
+            '/test-json': (context) => TestSerialozationJsonScreen(),
             '/test-form': (context) => TestFormScreen(),
-            '/nhuahvt-home': (context) => NhuahvtHomeScreen()
+            '/nhuahvt-home': (context) => NhuahvtHomeScreen(),
+            '/tes_provider_v2': (context) => TestProviderV2Screen()
           },
           // initialRoute: '/test-redux',
-          initialRoute: '/nhuahvt-home',
+          initialRoute: '/tes_provider_v2',
           // initialRoute: '/test-provider',
           // initialRoute: '/test-call-api',
           // initialRoute: '/test-form',

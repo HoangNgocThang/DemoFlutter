@@ -18,7 +18,7 @@ class _TestProviderScreenState extends State<TestProviderScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('KindaCode.com'),
+        title: const Text('Test Provider'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
