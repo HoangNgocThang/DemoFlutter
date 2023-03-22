@@ -74,7 +74,7 @@ class MyApp extends StatelessWidget {
             '/tes_provider_v2': (context) => TestProviderV2Screen()
           },
           // initialRoute: '/test-redux',
-          initialRoute: '/tes_provider_v2',
+          initialRoute: '/test-json',
           // initialRoute: '/test-provider',
           // initialRoute: '/test-call-api',
           // initialRoute: '/test-form',
