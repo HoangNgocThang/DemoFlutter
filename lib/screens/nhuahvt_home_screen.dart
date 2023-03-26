@@ -13,7 +13,6 @@ class _NhuahvtHomeScreenState extends State<NhuahvtHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: CustomNavBar(),
       body: SafeArea(
           child: ListView(
         children: [

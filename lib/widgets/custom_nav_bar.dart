@@ -5,7 +5,7 @@ import 'package:my_app/screens/nhuahvt_cart_screen.dart';
 import 'package:my_app/screens/nhuahvt_home_screen.dart';
 
 class CustomNavBar extends StatefulWidget {
-  const CustomNavBar({Key? key}) : super(key: key);
+  const CustomNavBar(int currentTab, {Key? key}) : super(key: key);
 
   @override
   State<CustomNavBar> createState() => _CustomNavBarState();
@@ -19,39 +19,38 @@ class _CustomNavBarState extends State<CustomNavBar> {
     return Expanded(
       child: InkWell(
         onTap: () {
-          if (_selectedIndex == index) {
-            return;
-          }
-          setState(() {
-            _selectedIndex = index;
-          });
-
-          print('index${index}');
-          if (index == 0) {
-            // Navigator.pushNamed(context, '/nhuahvt-home');
-            // Navigator.pushReplacementNamed(context, '/nhuahvt-home');
-            Navigator.pushReplacement(
-              context,
-              PageRouteBuilder(
-                pageBuilder: (context, animation1, animation2) =>
-                    NhuahvtHomeScreen(),
-                transitionDuration: Duration.zero,
-                reverseTransitionDuration: Duration.zero,
-              ),
-            );
-          } else if (index == 1) {
-            // Navigator.pushNamed(context, '/nhuahvt-cart');
-            // Navigator.pushReplacementNamed(context, '/nhuahvt-cart');
-            Navigator.pushReplacement(
-              context,
-              PageRouteBuilder(
-                pageBuilder: (context, animation1, animation2) =>
-                    NhuahvtCartScreen(),
-                transitionDuration: Duration.zero,
-                reverseTransitionDuration: Duration.zero,
-              ),
-            );
-          }
+          // if (_selectedIndex == index) {
+          //   return;
+          // }
+          // setState(() {
+          //   _selectedIndex = index;
+          // });
+          // print('index${index}');
+          // if (index == 0) {
+          //   // Navigator.pushNamed(context, '/nhuahvt-home');
+          //   // Navigator.pushReplacementNamed(context, '/nhuahvt-home');
+          //   Navigator.pushReplacement(
+          //     context,
+          //     PageRouteBuilder(
+          //       pageBuilder: (context, animation1, animation2) =>
+          //           NhuahvtHomeScreen(),
+          //       transitionDuration: Duration.zero,
+          //       reverseTransitionDuration: Duration.zero,
+          //     ),
+          //   );
+          // } else if (index == 1) {
+          //   // Navigator.pushNamed(context, '/nhuahvt-cart');
+          //   // Navigator.pushReplacementNamed(context, '/nhuahvt-cart');
+          //   Navigator.pushReplacement(
+          //     context,
+          //     PageRouteBuilder(
+          //       pageBuilder: (context, animation1, animation2) =>
+          //           NhuahvtCartScreen(),
+          //       transitionDuration: Duration.zero,
+          //       reverseTransitionDuration: Duration.zero,
+          //     ),
+          //   );
+          // }
         },
         child: Container(
           child: Column(

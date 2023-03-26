@@ -13,7 +13,6 @@ class _NhuahvtCartScreenState extends State<NhuahvtCartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: CustomNavBar(),
       body: SafeArea(
           child: ListView(
         children: [
