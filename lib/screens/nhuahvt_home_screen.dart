@@ -19,6 +19,9 @@ class _NhuahvtHomeScreenState extends State<NhuahvtHomeScreen> {
           Text('1'),
           Text('1'),
           Text('1'),
+          TextButton(onPressed: (){
+            Navigator.pushNamed(context, '/test-json');
+          }, child: Text('click'))
         ],
       )),
     );
