@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:my_app/widgets/custom_nav_bar.dart';
 
 class NhuahvtHomeScreen extends StatefulWidget {
   const NhuahvtHomeScreen({super.key});
@@ -14,20 +13,20 @@ class _NhuahvtHomeScreenState extends State<NhuahvtHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
           child: Container(
-        // padding: EdgeInsets.only(top: 10),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            Expanded(
-                flex: 1,
+            Container(
+                height: 135,
                 child: Column(
                   children: [
                     Expanded(
                       child: Container(
                         padding: EdgeInsets.only(left: 27),
-                        color: Colors.yellow,
+                        // color: Colors.yellow,
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
@@ -64,6 +63,9 @@ class _NhuahvtHomeScreenState extends State<NhuahvtHomeScreen> {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 24,
+                    ),
                     Expanded(
                         child: Container(
                       padding: EdgeInsets.only(left: 27, right: 27),
@@ -81,16 +83,21 @@ class _NhuahvtHomeScreenState extends State<NhuahvtHomeScreen> {
                               print('click');
                             },
                             child: Container(
-                              child: Container(
-                                  color: HexColor("#FFC428"),
-                                  width: 47,
-                                  height: 50,
-                                  child: Container(
-                                      child: Image.asset(
-                                    'images/Bag.png',
-                                    width: 18,
-                                    height: 18,
-                                  ))),
+                              width: 47,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      topRight: Radius.circular(10.0),
+                                      topLeft: Radius.circular(10.0),
+                                      bottomLeft: Radius.circular(10.0),
+                                      bottomRight: Radius.circular(20.0)),
+                                  color: HexColor("#FFC428")),
+                              child:  Image.asset(
+                                'images/Bag2.png',
+                                  // height: 10,
+                                  // width: 10,
+                                  // fit:BoxFit.cover
+                              )
                             ),
                           ),
                         ],

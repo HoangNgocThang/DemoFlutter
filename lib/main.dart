@@ -72,7 +72,7 @@ class _RootScreenState extends State<RootScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: Container(
-          height: 80,
+          height: 60,
           decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
